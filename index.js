@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 const fs = require('fs')
 const prompts = require('prompts');
 const { execSync } = require('child_process')
