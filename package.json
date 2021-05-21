@@ -11,8 +11,9 @@
     "url": "git+https://github.com/lucasrochagit/ezcommit.git"
   },
   "bin": {
-    "ezcommit": "./index.js"
+    "ezcommit": "./bin/ezcommit.js"
   },
+  "preferGlobal": true,
   "keywords": [
     "commit",
     "ezcommit",

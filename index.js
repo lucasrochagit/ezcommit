@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const fs = require('fs')
 const prompts = require('prompts');
 const { execSync } = require('child_process')
@@ -95,7 +94,7 @@ const options = [
     },
 ];
 
-(async function () {
+exports = module.exports.run = async function () {
     const response = await prompts(options, {
         onCancel: () => {
             process.exit(0)
@@ -122,7 +121,7 @@ const options = [
     }
 
     runCommandFromTerminal(`git push origin ${current_branch}`)
-})()
+}
 
 function runCommandFromTerminal(command) {
     return execSync(command, { encoding: 'utf-8' })
