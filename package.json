@@ -1,0 +1,30 @@
+{
+  "name": "ezcommit",
+  "version": "1.0.0",
+  "description": "A simple tool to facilitate the commit process through the terminal.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasrochagit/ezcommit.git"
+  },
+  "bin": {
+    "ezcommit": "./index.js"
+  },
+  "keywords": [
+    "commit",
+    "ezcommit",
+    "easy commit"
+  ],
+  "author": "Lucas Rocha <lucascosmorocha@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasrochagit/ezcommit/issues"
+  },
+  "homepage": "https://github.com/lucasrochagit/ezcommit#readme",
+  "dependencies": {
+    "prompts": "^2.4.1"
+  }
+}
