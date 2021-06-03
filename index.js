@@ -16,7 +16,7 @@ if (current_repo === '') {
 
 const current_branch = runCommandFromTerminal('git branch --show-current').replace('\n', '')
 const tracked_files = runCommandFromTerminal('git ls-files --cached');
-const untracked_files = runCommandFromTerminal('git ls-files --others --modified --deleted --exclude-standard')
+const untracked_files = runCommandFromTerminal('git ls-files -o -m -d --exclude-standard')
 
 const untracked_files_list = untracked_files
     .split('\n')
@@ -106,8 +106,8 @@ exports = module.exports.run = async function () {
     if (!add_changes && tracked_files === '') {
         console.log('It is not possible to commit without add changes.')
         return
-    } else if (add_changes && changed_files?.length) {
-        runCommandFromTerminal(`git add ${changed_files?.join(' ')}`)
+    } else if (add_changes && changed_files && changed_files.length) {
+        runCommandFromTerminal(`git add ${changed_files.join(' ')}`)
     }
 
     const commit_title = `-m "${type}${scope ? `(${scope})` : ''}: ${description}"`
